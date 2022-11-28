@@ -4,7 +4,7 @@ import * as S from './style'
 export default function Input() {
   return (
     <>
-        <input type="text" />
+        <S.Input type="text" />
     </>
   )
 }
