@@ -1,10 +1,10 @@
 import React from 'react'
 import * as S from './style'
 
-export default function Input() {
+export default function Input({value}) {
   return (
     <>
-        <S.Input type="text" />
+        <S.Input disabled value={value}/>
     </>
   )
 }

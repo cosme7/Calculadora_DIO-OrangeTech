@@ -30,13 +30,11 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body{
-
-
         min-height: 100vh;
-
+        display: grid;
+        place-content: center;
         text-rendering: optimizeSpeed;
         line-height: 1.5;
-
         background-color: #F3f3f3;
     }
 `

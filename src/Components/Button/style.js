@@ -5,7 +5,7 @@ export const Button = styled.button`
     aspect-ratio: 1;
     border-radius: 50%;
 
-    font-size: clamp(1rem, 2vw, 2.2rem);
+    font-size: clamp(1.2rem, 2vw, 2.2rem);
     font-family: var(--ff-primary);
     font-weight: var(--fw-700);
     text-align: center;
