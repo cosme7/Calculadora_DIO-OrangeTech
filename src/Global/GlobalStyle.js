@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import Background from '../Assets/bg-calc.jpeg'
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -27,14 +28,32 @@ export const GlobalStyle = createGlobalStyle`
         --clr-orange: #FF9500;
         /* Font-Weight */
         --fw-700: 700;
+        /* Rotation */
+        --rotation: 45deg;
     }
 
     body{
         min-height: 100vh;
-        display: grid;
-        place-content: center;
         text-rendering: optimizeSpeed;
-        line-height: 1.5;
-        background-color: #F3f3f3;
+        line-height: 1.2;
+        background-image: url(${Background});
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
     }
+
+  &::-webkit-scrollbar{
+     width: 1.2em;
+     height: 1em;
+  }
+
+  &::-webkit-scrollbar-track{
+      background-color: var(--bg-orange);
+  }
+
+  &::-webkit-scrollbar-thumb{
+      background-color: var(--bg-lightdark);
+      border: .1em solid var(--bg-orange);
+      border-radius: 100vw;
+  }
 `

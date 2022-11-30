@@ -4,7 +4,9 @@ import * as S from './style'
 export default function Input({value}) {
   return (
     <>
-        <S.Input disabled value={value}/>
+        <S.H1>
+          {value}
+        </S.H1>
     </>
   )
 }

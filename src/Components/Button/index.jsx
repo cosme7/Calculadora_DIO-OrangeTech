@@ -1,11 +1,16 @@
 import React from 'react'
 import * as S from './style'
 
-export default function Button({title, variant="operador", outros="others",grid="tamanho" ,OnClick}) {
+export default function Button({label, variant="operator", clrGrey="greyClr", align="size", onClick}) {
   return (
     <>
-        <S.Button variant={variant} outros={outros} grid={grid} onClick={OnClick}>
-          {title}
+        <S.Button 
+        variant={variant} 
+        clrGrey={clrGrey} 
+        align={align} 
+        onClick={onClick} 
+        type="button">
+          {label}
         </S.Button>
     </>
   )
