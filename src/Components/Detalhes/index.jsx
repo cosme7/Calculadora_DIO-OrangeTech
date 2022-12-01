@@ -13,10 +13,10 @@ export default function Detalhes({label, onClick}) {
   return (
     <>
         <S.Button open={open} onClick={() => {toggleMenu()}}>
-            <svg stroke="var(--bg-dark)" viewBox="0 0 100 100" width="45">
-                <line open={open} x1="90" x2="10" y1="40" y2="40" stroke-width="10" stroke-linecap="round" stroke-dasharray="80" stroke-dashoffset="0">
+            <svg viewBox="0 0 100 100" width="45">
+                <line x1="90" x2="10" y1="40" y2="40" strokeWidth="10" strokeLinecap="round" strokeDasharray="80" strokeDashoffset="0">
                 </line>
-                <line open={open} x1="10" x2="90" y1="60" y2="60" stroke-width="10" stroke-linecap="round" stroke-dasharray="80" stroke-dashoffset="0">
+                <line x1="10" x2="90" y1="60" y2="60" strokeWidth="10" strokeLinecap="round" strokeDasharray="80" strokeDashoffset="0">
                 </line>
             </svg>
        </S.Button>

@@ -1,37 +1,71 @@
 import styled, { keyframes, css } from "styled-components";
 
 const toClose = keyframes`
-  0% {
-    stroke-dashoffset: 0;
-  }
-  40% {
-    stroke-dashoffset: 79.9;
-  }
-  60% {
-    stroke-dashoffset: 79.9;
-    rotate: 0deg;
-  }
-  100% {
-    stroke-dashoffset: 0;
-    rotate: 0deg;
-  }
+    0% {
+      stroke-dashoffset: 0;
+    }
+    40% {
+      stroke-dashoffset: 79.9;
+    }
+    60% {
+      stroke-dashoffset: 79.9;
+      rotate: var(--rotation);
+    }
+    100% {
+      stroke-dashoffset: 0;
+      rotate: var(--rotation);
+    }
 `; 
 
 const toOpen = keyframes`
     0% {
-        stroke-dashoffset: 0;
-        rotate: var(--rotation);
+      stroke-dashoffset: 0;
+      rotate: var(--rotation);
     }
     40% {
-        stroke-dashoffset: 79.9;
-        rotate: var(--rotation);
+      stroke-dashoffset: 79.9;
+      rotate: var(--rotation);
     }
     60% {
-        stroke-dashoffset: 79.9;
+      stroke-dashoffset: 79.9;
     }
     100% {
-        stroke-dashoffset: 0;
+      stroke-dashoffset: 0;
     }
+`;
+
+export const Button = styled.button`
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    position: relative;
+    z-index: 9999;
+
+    svg{
+        stroke: var(--bg-light);
+        transition: rotate 800ms 100ms;
+        rotate: ${({open}) => open ? '1.5turn' : '0'};
+    }
+    
+    line:is(:nth-child(1), :nth-child(2)){
+        animation: ${toOpen} 1s forwards;
+    };
+
+    line:is(:nth-child(1), :nth-child(2)){
+        animation: ${({open}) => open && css`
+          ${toClose} 1s forwards;
+        `}
+    };
+
+    line:nth-child(1){
+        --rotation: -45deg;
+        transform-origin: 65px 45px;
+    }
+
+    line:nth-child(2){
+        transform-origin: 60px 55px;
+    }
+
 `;
 
 export const Historic = styled.div`
@@ -71,7 +105,6 @@ export const Historic = styled.div`
     font-family: var(--ff-primary);
     font-weight: var(--fw-700);
     color: var(--clr-light);
-    text-transform: uppercase;
     text-align: right;
   }
 
@@ -94,38 +127,4 @@ export const Overlay = styled.div`
     background-image: linear-gradient( rgb(0, 0, 0, 0.2), rgb(255, 255, 255, 0.5));
 `;
 
-export const Button = styled.button`
-    background-color: transparent;
-    cursor: pointer;
-    border: none;
-    position: relative;
-    z-index: 9999;
 
-    svg{
-        stroke: var(--bg-light);
-        transition: rotate 800ms 100ms;
-        rotate: ${({open}) => open ? '1turn' : '0'};
-    }
-
-    line:nth-child(1){
-        --rotation: -45deg;
-        rotate:var(--rotation);
-        transform-origin: 60px 45px;
-    }
-
-    line:nth-child(2){
-        --rotation: 45deg;
-        rotate: var(--rotation);
-        transform-origin: 60px 55px;
-    }
-
-    line:is(:nth-child(1), :nth-child(2)){
-        animation: ${toClose} 0.4s forwards;
-    };
-
-    line:is(:nth-child(1), :nth-child(2)){
-        animation: ${({open}) => open && css`
-          ${toOpen} 0.4s forwards;
-        `}
-    };
-`;
