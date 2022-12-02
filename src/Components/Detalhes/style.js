@@ -41,6 +41,17 @@ export const Button = styled.button`
     position: relative;
     z-index: 9999;
 
+    span{
+      color: red;
+      clip: rect(0 0 0 0); 
+      clip-path: inset(50%);
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap; 
+      width: 1px;
+    }
+
     svg{
         stroke: var(--bg-light);
         transition: rotate 800ms 100ms;

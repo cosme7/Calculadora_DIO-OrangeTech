@@ -19,6 +19,7 @@ export default function Detalhes({label, onClick}) {
                 <line x1="10" x2="90" y1="60" y2="60" strokeWidth="10" strokeLinecap="round" strokeDasharray="80" strokeDashoffset="0">
                 </line>
             </svg>
+            <span>Histórico de Cálculo</span>
        </S.Button>
 
        <S.Overlay open={open} onClick={() => {toggleMenu(false)}}></S.Overlay>
